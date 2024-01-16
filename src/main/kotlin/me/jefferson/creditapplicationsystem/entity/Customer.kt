@@ -1,5 +1,4 @@
 package me.jefferson.creditapplicationsystem.entity
-
 import jakarta.persistence.*
 import java.math.BigDecimal
 
@@ -16,5 +15,4 @@ data class Customer(
     @Column(nullable = false) @OneToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REMOVE, CascadeType.PERSIST])
     var credits: List<Credit> = mutableListOf(),
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = null
-
 )
